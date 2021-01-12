@@ -1,5 +1,4 @@
-# C-Scientific-B-Scientific
-
+C SCIENTIFIC B SCIENTIFIC 
 
 
 #include<stdio.h>
@@ -16,7 +15,7 @@ int main(void)
         printf(" 1. Addition \n 2. Subtraction \n 3.Multiplication \n 4. Division\n");
         printf("5. Square root \n 6. X ^ Y \n 7. X^2 \n 8. X ^ 3 \n ");
         printf("9. 1/x \n 10. X ^ (1/Y) \n 11. X^ (1/3) \n ");
-        printf(" 12. 10 ^ X \n 13. X! \n  15. log10(X) \n  ");
+        printf(" 12. 10 ^ X \n 13. X!  \n 14. % \n 15. log10(X) \n  ");
         printf(" 16. sin (X) \n 17. cos(X) \n 18. tan(X) \n 19. cosec(X) \n 20. sec(X) \n 21. cot(X) \n");
         printf("Choice : ");
         scanf("%d", &Choice);
@@ -68,35 +67,35 @@ int main(void)
             break;
            
            
-           /* case 6 :
+           case 6 :
             printf("Enter X : " );
             scanf("%f" , &X );
             
             printf("Enter Y : " );
             scanf("%f" , &Y );
-            result =  X ^ Y ;
+            result =  pow(X , Y ) ;
             printf("\n result : %f " , result );
-            break; */
+            break; 
             
             case 7 :
             printf("Enter X : " );
             scanf("%f" , &X );
             
-            result =  X ^ 2;
+            result = pow( X , 2);
             printf("\n result : %f " , result );
             break;
             
             case 8 :
             printf("Enter X : " );
             scanf("%f" , &X );
-            result =  X ^ 3;
+            result = pow(X, 3);
             printf("\n result : %f " , result );
             break;
             
             case 9 :
             printf("Enter X : " );
             scanf("%f" , &X );
-            result = 1 / X ;
+            result = pow( X , -1);
             printf("\n result : %f " , result );
             break;
             
@@ -106,28 +105,34 @@ int main(void)
             
             printf("Enter Y : " );
             scanf("%f" , &Y );
-            result =  X ^ ( 1 / Y);
+            result =  pow(X ,( 1 / Y));
             printf("\n result : %f " , result );
             break;
             
             case 11 :
             printf("Enter X : " );
             scanf("%f" , &X );
-            result = X ^ ( 1/3);
+            result = pow( X, 1/3);
             printf("\n result : %f " , result );
             break;
             
             case 12 :
             printf("Enter X : " );
             scanf("%f" , &X );
-            result =  10 ^ X;
+            result = pow( 10, X);
             printf("\n result : %f " , result );
             break;
             
             case 13:
             printf("Enter X : " );
             scanf("%f" , &X );
-            result =  X!;
+            result = 1;
+            for( i = 1; i <= X  ; i++)
+            {
+               result = result * i ;
+               
+            }
+            
             printf("\n result : %f " , result );
             break;
             
@@ -136,7 +141,7 @@ int main(void)
             scanf("%f" , &X );
             printf("Enter Y : " );
             scanf("%f" , &Y );
-            result =  X % Y;
+            result =  (X * Y)/100;
             printf("\n result : %f " , result );
             break;
             
@@ -182,7 +187,7 @@ int main(void)
             printf("\n result : %f " , result );
             break;
             
-            case 20 :
+            case 21 :
             printf("Enter X : " );
             scanf("%f" , &X );
             result =  1 / tan(X * 3.14159/180);
@@ -192,7 +197,7 @@ int main(void)
             printf(" invalid Choice !");
         }
     }
-    while(choice);
+    while(Choice);
     getchar();
     return 0;
 }
